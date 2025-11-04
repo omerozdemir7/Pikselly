@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./images/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pikselly – Gelişmiş Görsel Arama</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.min.css"
+    />
+    <script type="module" crossorigin src="/Pikselly/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/Pikselly/assets/vendor-DuFnt2m8.js">
+    <link rel="stylesheet" crossorigin href="/Pikselly/assets/vendor-Dr4k8ETB.css">
+    <link rel="stylesheet" crossorigin href="/Pikselly/assets/index-iiMiA-s3.css">
+  </head>
+  <body>
+    <!-- Tema Değiştirici -->
+    <div class="theme-switch-container">
+      <input type="checkbox" id="theme-toggle" class="theme-toggle-input" />
+      <label for="theme-toggle" class="theme-toggle-label">
+        <span class="icon sun">☀️</span>
+        <span class="icon moon">🌙</span>
+      </label>
+    </div>
+
+    <!-- ✅ LOGO EKLENDİ -->
+    <header class="header">
+      <a href="/" class="logo">
+        <img src="/Pikselly/assets/logo-B-XvEruD.png" alt="Pikselly Logo" />
+        
+      </a>
+
+      <form class="search-form" id="search-form">
+        <input
+          type="text"
+          name="searchQuery"
+          autocomplete="off"
+          placeholder="Arayın..."
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <nav class="search-categories" id="search-categories">
+        <button
+          class="category-btn active"
+          data-type="all"
+          data-url="https://pixabay.com/api/"
+        >
+          Discover
+        </button>
+        <button
+          class="category-btn"
+          data-type="photo"
+          data-url="https://pixabay.com/api/"
+        >
+          İmages
+        </button>
+        <button
+          class="category-btn"
+          data-type="vector"
+          data-url="https://pixabay.com/api/"
+        >
+          Vectors
+        </button>
+        <button
+          class="category-btn"
+          data-type="illustration"
+          data-url="https://pixabay.com/api/"
+        >
+          Illustrations
+        </button>
+        <button
+          class="category-btn"
+          data-type="video"
+          data-url="https://pixabay.com/api/videos/"
+        >
+          Vıdeos
+        </button>
+        <button
+          class="category-btn"
+          data-type="gif"
+          data-url="https://pixabay.com/api/"
+        >
+          Gıf's
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <ul class="gallery"></ul>
+      <button type="button" class="load-more-btn hidden">Load more</button>
+      <div class="loader-container">
+        <span class="loader hidden"></span>
+        <p class="loader-text hidden">Lütfen bekleyin, içerik yükleniyor...</p>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplelightbox/dist/simple-lightbox.min.js"></script>
+  </body>
+</html>
