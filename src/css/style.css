@@ -1,0 +1,432 @@
+:root {
+  /* Ana Renkler */
+  --primary-color: #4e73df;
+  --primary-color-dark: #3e63ce;
+  --primary-color-text: #fff;
+  
+  /* Açık Mod (Varsayılan) */
+  --bg-color: #f8f9fc;
+  --card-bg-color: #fff;
+  --text-color: #5a5c69;
+  --text-color-light: #858796;
+  --input-bg-color: #fff;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+body.dark-mode {
+  /* Koyu Mod Renkleri */
+  --bg-color: #1a1a1a;
+  --card-bg-color: #2c2c2c;
+  --text-color: #e1e1e1;
+  --text-color-light: #aaa;
+  --input-bg-color: #3a3a3a;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+.header {
+  background-color: var(--primary-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Anahtar konumu için */
+}
+
+
+.logo {
+  position: absolute;
+  
+  left: 20px;
+  display: flex;
+  align-items: center;
+  
+}
+
+.logo img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  
+}
+
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: inherit;
+}
+
+
+.search-form {
+  display: flex;
+  gap: 10px;
+}
+
+.search-form input {
+  width: 300px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.search-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color-text);
+  color: var(--primary-color);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.search-form button:hover {
+  background-color: #f1f1f1;
+}
+
+/* Kategori Stilleri */
+.search-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.category-btn {
+  padding: 8px 16px;
+  border: 1px solid var(--primary-color-text);
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  color: var(--primary-color-text);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.category-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.category-btn.active {
+  background-color: var(--primary-color-text);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gallery-item {
+  background-color: var(--card-bg-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  width: calc(25% - 20px);
+  min-width: 250px;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-link {
+  text-decoration: none;
+  color: var(--dark-gray);
+  display: block;
+  position: relative;
+}
+
+.gallery-link[data-type='video']::before {
+  content: '▶';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.gallery-link[data-type='video']:hover::before {
+  opacity: 1;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  color: var(--text-color-light);
+}
+
+.info-item {
+  font-size: 12px;
+}
+
+.info-item b {
+  display: block;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+/* "Load More" Düğmesi Stilleri */
+.load-more-btn {
+  display: block;
+  margin: 30px auto 20px auto;
+  padding: 10px 30px;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: var(--primary-color-text);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.load-more-btn:hover {
+  background-color: var(--primary-color-dark);
+  transform: translateY(-2px);
+}
+
+/* Loader */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid var(--primary-color);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text-color-light);
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Video Modal Stilleri (Koyu moda uyum) */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* Daha koyu */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.video-modal-content {
+  position: relative;
+  background-color: #000;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.video-modal-content video {
+  display: block;
+  width: 100%;
+  max-width: 80vw;
+  max-height: calc(90vh - 40px);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1010;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close-btn:hover {
+  background-color: #f1f1f1;
+}
+
+.theme-switch-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.theme-toggle-input {
+  display: none; /* Checkbox'ı gizle */
+}
+
+.theme-toggle-label {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 26px;
+  background-color: rgba(0, 0, 0, 0.2); /* Header üzerindeki baz renk */
+  border-radius: 50px;
+  padding: 5px;
+  cursor: pointer;
+  position: relative;
+  /* Geçiş yumuşatıldı */
+  transition: background-color 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+/* Gece modu aktifken 'track' arkaplanı */
+.theme-toggle-input:checked + .theme-toggle-label {
+  background-color: rgba(255, 255, 255, 0.3); /* Header üzerinde daha açık bir renk */
+}
+
+/* Daire (Slider) */
+.theme-toggle-label::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  
+  /* YENİ: Daha "yaylı" (springy) bir animasyon zamanlaması */
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Kaydırma hareketi (Değişiklik yok) */
+.theme-toggle-input:checked + .theme-toggle-label::after {
+  transform: translateX(30px);
+}
+
+/* --- İkon Animasyonları (Kusursuz Geçiş) --- */
+
+/* İkonlar için genel ayarlar */
+.theme-toggle-label .icon {
+  position: absolute;
+  top: 50%;
+  font-size: 14px;
+  
+  /* YENİ: Hem transform hem opacity için geçiş eklendi */
+  /* İkonlar, slider'dan biraz daha hızlı veya farklı bir zamanlamada gelebilir */
+  transition: opacity 0.3s ease-in-out, 
+              transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+/* Ay ikonu solda */
+.theme-toggle-label .moon {
+  left: 4px;
+}
+
+/* Güneş ikonu sağda */
+.theme-toggle-label .sun {
+  right: 6px;
+}
+
+/* --- Görünürlük ayarları (Mantık Düzeltildi ve Animate Edildi) --- */
+
+/* Gündüz Modu (Unchecked) Aktif: GÜNEŞ görünür */
+.theme-toggle-input:not(:checked) + .theme-toggle-label .sun {
+  opacity: 1;
+  transform: translateY(-50%) scale(1) rotate(0deg);
+}
+
+/* Gündüz Modu (Unchecked) Pasif: AY kaybolur */
+.theme-toggle-input:not(:checked) + .theme-toggle-label .moon {
+  opacity: 0;
+  /* Dönerken küçülerek kaybolur */
+  transform: translateY(-50%) scale(0.5) rotate(-90deg);
+}
+
+/* Gece Modu (Checked) Aktif: AY görünür */
+.theme-toggle-input:checked + .theme-toggle-label .moon {
+  opacity: 1;
+  transform: translateY(-50%) scale(1) rotate(0deg);
+}
+
+/* Gece Modu (Checked) Pasif: GÜNEŞ kaybolur */
+.theme-toggle-input:checked + .theme-toggle-label .sun {
+  opacity: 0;
+  /* Dönerken küçülerek kaybolur */
+  transform: translateY(-50%) scale(0.5) rotate(90deg);
+}
