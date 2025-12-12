@@ -325,9 +325,9 @@ function checkEndAndUpdateButton() {
 function smoothScroll() {
   const firstCard = galleryContainer.querySelector('.gallery-item');
   if (firstCard) {
-    const cardHeight = firstCard.getBoundingClientRect().height;
+    const { height: cardHeight } = firstCard.getBoundingClientRect();
     window.scrollBy({
-      top: cardHeight * 2,
+      top: cardHeight * 1.5,
       behavior: 'smooth',
     });
   }
