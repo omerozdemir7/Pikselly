@@ -430,3 +430,110 @@ main {
   /* Dönerken küçülerek kaybolur */
   transform: translateY(-50%) scale(0.5) rotate(90deg);
 }
+
+
+/* -------------------------------------------- */
+/*                 RESPONSIVE                   */
+/* -------------------------------------------- */
+
+/* 1200px - 992px Arası (Tablet Yatay) */
+@media (max-width: 1200px) {
+  .gallery-item {
+    width: calc(33.33% - 20px);
+  }
+}
+
+/* 992px - 768px Arası (Tablet Dikey) */
+@media (max-width: 992px) {
+  .logo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .search-form input {
+    width: 250px;
+  }
+
+  .gallery-item {
+    width: calc(50% - 20px);
+  }
+}
+
+/* 768px ve Altı (Büyük Telefon / Küçük Tablet) */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px;
+  }
+
+  .logo {
+    position: relative;
+    left: 0;
+    margin-bottom: 10px;
+  }
+
+  .logo img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .search-form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-form input {
+    width: 100%;
+  }
+
+  .search-form button {
+    width: 100%;
+  }
+
+  .search-categories {
+    gap: 8px;
+  }
+
+  .category-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .gallery-item {
+    width: calc(50% - 20px);
+  }
+}
+
+/* 576px ve Altı (Mobil) */
+@media (max-width: 576px) {
+  .logo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .gallery {
+    gap: 15px;
+  }
+
+  .gallery-item {
+    width: 100%;
+  }
+
+  .gallery-image {
+    height: 170px;
+  }
+
+  .info {
+    padding: 10px;
+    font-size: 11px;
+  }
+
+  .theme-switch-container {
+    top: 10px;
+    right: 10px;
+    transform: scale(0.85);
+  }
+}
